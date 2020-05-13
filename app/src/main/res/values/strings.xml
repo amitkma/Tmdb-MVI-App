@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TMDB App</string>
+
+    <string name="tmdb_api_key">761132fa9ad919c897319f352aa87b40</string>
+</resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ProgressBar
+        android:id="@+id/loadingBar"
+        android:layout_gravity="center"
+        android:layout_width="56dp"
+        android:layout_height="56dp"/>
+
+    <TextView
+        android:id="@+id/errorText"
+        android:layout_gravity="center"
+        android:text="Encountered an error."
+        android:textColor="@color/text_primary_light"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/trendingRecyclerView"
+        android:scrollbarStyle="outsideOverlay"
+        android:clipToPadding="false"
+        android:elevation="1dp"
+        android:paddingTop="56dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="@null"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:elevation="1dp"
+        android:fontFamily="@font/lato"
+        android:outlineProvider="none"/>
+</FrameLayout>

@@ -1,0 +1,101 @@
+/**
+ * Shared file between builds so that they can all use the same dependencies and
+ * maven repositories.
+ **/
+ext.deps = [:]
+def versions = [:]
+
+versions.android_gradle_plugin = '3.6.3'
+versions.min_sdk = 26
+versions.target_sdk = 28
+// Preferably keep this in sync
+versions.build_sdk = 28
+versions.androidx = "1.1.0"
+
+versions.arch_core = "2.1.0"
+versions.room = "2.2.5"
+versions.lifecycle = '2.2.0'
+
+versions.constraint_layout = "1.1.3"
+
+versions.glide = "4.8.0"
+
+versions.junit = "4.12"
+versions.kotlin = "1.3.72"
+versions.leakcanary = "1.6.3"
+
+versions.okhttp= "3.9.0"
+
+versions.recycler_expandable = "3.0.0-RC1"// Library is deprecated
+versions.retrofit = "2.3.0"
+versions.rx_android = "2.1.0"
+versions.rx_java = "2.2.2"
+
+versions.timber = "4.7.1"
+
+def deps = [:]
+
+// support
+
+def androidx = [:]
+androidx.annotations = "androidx.annotation:annotation:$versions.androidx"
+androidx.app_compat = "androidx.appcompat:appcompat:1.1.0"
+androidx.core_ktx = "androidx.core:core-ktx:$versions.androidx"
+androidx.cardview = "androidx.cardview:cardview:1.0.0"
+androidx.recyclerview = "androidx.recyclerview:recyclerview:$versions.androidx"
+deps.androidx = androidx
+
+def arch_core = [:]
+arch_core.testing = "androidx.arch.core:core-testing:$versions.arch_core"
+deps.arch_core = arch_core
+
+def kotlin = [:]
+kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+kotlin.plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+deps.kotlin = kotlin
+
+def leakcanary = [:]
+leakcanary.lib = "com.squareup.leakcanary:leakcanary-android:$versions.leakcanary"
+leakcanary.no_op = "com.squareup.leakcanary:leakcanary-android-no-op:$versions.leakcanary"
+deps.leakcanary = leakcanary
+
+def lifecycle = [:]
+lifecycle.viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle"
+lifecycle.livedata = "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycle"
+deps.lifecycle = lifecycle
+
+def okhttp = [:]
+okhttp.core = "com.squareup.okhttp3:okhttp:$versions.okhttp"
+okhttp.logging_interceptor = "com.squareup.okhttp3:logging-interceptor:$versions.okhttp"
+deps.okhttp = okhttp
+
+def room = [:]
+room.runtime = "androidx.room:room-runtime:$versions.room"
+room.compiler = "androidx.room:room-compiler:$versions.room"
+deps.room = room
+
+def rx = [:]
+rx.java = "io.reactivex.rxjava2:rxjava:$versions.rx_java"
+rx.kotlin = "io.reactivex.rxjava2:rxkotlin:2.4.0"
+rx.android = "io.reactivex.rxjava2:rxandroid:$versions.rx_android"
+deps.rx = rx
+
+def retrofit = [:]
+retrofit.runtime = "com.squareup.retrofit2:retrofit:$versions.retrofit"
+retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+retrofit.adapter_rxjava = "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit"
+deps.retrofit = retrofit
+
+deps.android_gradle_plugin = "com.android.tools.build:gradle:$versions.android_gradle_plugin"
+deps.constraint_layout = "com.android.support.constraint:constraint-layout:$versions.constraint_layout"
+deps.glide = "com.github.bumptech.glide:glide:$versions.glide"
+
+deps.timber = "com.jakewharton.timber:timber:$versions.timber"
+ext.deps = deps
+
+def build_versions = [:]
+build_versions.min_sdk = versions.min_sdk
+build_versions.target_sdk = versions.target_sdk
+build_versions.build_sdk = versions.build_sdk
+build_versions.gradle = versions.gradle
+ext.build_versions = build_versions

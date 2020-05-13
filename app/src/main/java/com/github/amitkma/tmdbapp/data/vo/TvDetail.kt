@@ -1,0 +1,31 @@
+package com.github.amitkma.tmdbapp.data.vo
+
+data class TvDetail(
+    val backdrop_path: String?,
+    val vote_average: Double,
+    val vote_count: Int,
+    val overview: String,
+    val popularity: Double,
+    val poster_path: String?,
+    val id: Int,
+    val genres: List<Genre>,
+    val homepage: String,
+    val created_by: List<CreatedBy>,
+    val episode_run_time: List<Int>,
+    val first_air_date: String,
+    val in_production: Boolean,
+    val languages: List<String>,
+    val last_air_date: String,
+    val last_episode_to_air: LastEpisodeToAir,
+    val name: String,
+    val networks: List<Network>,
+    val next_episode_to_air: Any,
+    val number_of_episodes: Int,
+    val number_of_seasons: Int,
+    val origin_country: List<String>,
+    val original_language: String,
+    val original_name: String,
+    val seasons: List<Season>,
+    val status: String,
+    val type: String
+): BaseTvMovieDetail
